@@ -38,3 +38,53 @@ void display()
 }
 void dis_delay(unsigned int i)
 {
+unsigned int j;
+for(j=0;j<i;j++)
+{
+display();
+}
+}
+
+void T1_inti()	//定时器中断初始化
+{
+  TMOD=0x01;//工作方式
+  TH0=(65536-20000)/256;//设定初值,进入一次中断50ms
+  TL0=(65536-20000)%256;
+  TR0=1;//启动
+  EA=1;//开总中断
+  ET0=1;//开定时器中断
+  EX0=1; //打开外部中断 0
+  IT0=1;//下降沿触发
+
+}
+void key()
+{
+  if(k1==0)
+  {
+  	dis_delay(2);//延时消抖
+	if(k1==0)
+	{
+	  miao++;
+	  if(miao>59)
+	  {
+	   fen++;
+	   miao=0;
+	   if(fen>59)
+	   {
+	   	 shi++;
+		 fen=0;
+		 if(shi>23)
+		 {
+		  shi=0;
+		 }
+	   }
+	  }
+	}
+  
+  }
+}
+
+void de()
+{
+    if(k2==0)
+      {
