@@ -88,3 +88,83 @@ void de()
 {
     if(k2==0)
       {
+         dis_delay(2);
+         if(k2==0)
+          {
+            fen++;
+            if(fen>59)
+              {
+                fen=0;
+                shi++;
+                if(shi>23)
+                {
+                  shi=0;
+                }
+              }
+          }
+      }
+}
+
+void de1()
+{
+  if(k3==0)
+   {
+     dis_delay(2);
+     if(k3==0)
+      {
+        shi--;
+        if(shi<=0)
+          {
+            shi=23;
+          }
+      }
+   }
+}
+
+void main()
+{	
+	T1_inti();
+	while(1)
+	{
+	  key();
+	  de();
+	  de1();
+	  fenli();
+	  display();
+	}
+}
+
+
+void T1_int()  interrupt 1		 //中断服务子程序
+{
+  TH0=(65536-20000)/256;//设定初值,进入一次中断50ms
+  TL0=(65536-20000)%256;
+  count++;
+  if(count==25)		 //判断1s是否到 20*50=1000
+  {
+  	 count=0;
+	 miao++;
+	 if(miao>59)
+	 {
+	 	fen++;
+		miao=0;
+		if(fen>59)
+		{
+			shi++;
+			fen=0;
+			if(shi>23)
+			{
+				shi=0;
+			}
+		
+		}
+	 
+	 
+	 }
+  }
+}
+
+void INT0_0()  interrupt 0		 //中断服务子程序
+{
+  TR0=~TR0;
+}
