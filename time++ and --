@@ -38,6 +38,3 @@ void display()
 }
 void dis_delay(unsigned int i)
 {
-unsigned int j;
-for(j=0;j<i;j++)
-{
