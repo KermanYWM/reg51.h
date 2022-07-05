@@ -87,7 +87,7 @@ void naoling()
 {
   if((shi==0)&&(fen==0)&&(miao==0))//00-00-00
   {
-  	while((miao<6)&&(TR0==1))//响铃，响多久5s
+  	while((miao<6)&&(TR0==1))//响铃，响5s
 	{
 	  key();
 	  fenli();
