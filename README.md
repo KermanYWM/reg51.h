@@ -3,4 +3,5 @@ It is based on STC89C51RC. Then, you can run it in Isis 7 professional.
                                                                                                      2022.7
 
 ![51](https://user-images.githubusercontent.com/108212981/177230683-9ecb9c0c-85fa-4bcf-9a09-15e702818a96.PNG)
-                                    ISIS 7 Professional Screenshot of interface
+                                  
+                                  ISIS 7 Professional Screenshot of interface
